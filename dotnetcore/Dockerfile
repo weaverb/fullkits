@@ -1,5 +1,5 @@
 FROM consol/ubuntu-xfce-vnc
-MAINTAINER Bryan Weaver bryanweaver@outlook.com
+LABEL author=bryanweaver@outlook.com
 ENV REFRESHED_AT 2018-02-07
 
 USER 0
@@ -21,3 +21,7 @@ RUN sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode st
     apt-get -y autoremove && rm -f $HOME/.config/bg_sakuli.png
 
 USER 1984
+
+# Install VS Code extensions
+RUN code --install-extension  ms-vscode.csharp
+
